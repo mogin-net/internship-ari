@@ -1,65 +1,65 @@
 import React from 'react'
 
 const Footer = () => {
-  return (
-    <footer className="bg-neutral-primary-soft">
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-            <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
-                <a href="https://umamusume.jp/" className="flex items-center">
-                    <img src="https://parts.umamusume.com/assets/images/logo_umamusume.png" alt="FlowBite Logo" />
-                </a>
-            </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-heading uppercase">Official Social Media</h2>
-                    <ul className="text-body font-medium">
-                        <li className="mb-4">
-                            <a href="https://twitter.com/umamusume" className="hover:underline">
-                                <img src="https://parts.umamusume.com/assets/images/sns-x.svg" className="h-7 me-3" alt="X" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/umamusume.eng" className="hover:underline">
-                                <img src="https://parts.umamusume.com/assets/images/sns-facebook.svg" className="h-7 me-3" alt="Facebook" />
-                            </a>
-                        </li>
-                    </ul>
+    return (
+        <footer className="bg-neutral-primary-soft">
+            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div className="md:flex md:justify-between">
+                    <div className="mb-6 md:mb-0">
+                        <a href="https://honkaiimpact3.hoyoverse.com/global/en-us/home" className="flex items-center bg-gray-500 md:hover:bg-gray-700 transition-colors">
+                            <img src="https://fastcdn.hoyoverse.com/mi18n/bh3_global/m20230317hy14h0glc0/upload/152066f03d3a6e570f1c559167089853_8449278023143135971.png" alt="Honkai Impact 3rd Logo"/>
+                        </a>
+                    </div>
+                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <div>
+                            <h2 className="mb-6 text-sm font-semibold text-heading uppercase">Official Social Media</h2>
+                            <ul className="text-body font-medium">
+                                <li className="mb-4">
+                                    <a href="https://twitter.com/umamusume" className="hover:underline">
+                                        <img src="https://parts.umamusume.com/assets/images/sns-x.svg" className="h-7 me-3" alt="X" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/umamusume.eng" className="hover:underline">
+                                        <img src="https://parts.umamusume.com/assets/images/sns-facebook.svg" className="h-7 me-3" alt="Facebook" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 className="mb-6 text-sm font-semibold text-heading uppercase">Follow us</h2>
+                            <ul className="text-body font-medium">
+                                <li className="mb-4">
+                                    <a href="https://www.youtube.com/@umamusume_eng" className="hover:underline ">
+                                        <img src="https://parts.umamusume.com/assets/images/sns-youtube.svg" className="h-7 me-3" alt="YouTube" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://discord.gg/umamusume-eng" className="hover:underline">
+                                        <img src="https://parts.umamusume.com/assets/images/sns-discord.svg" className="h-7 me-3" alt="Discord" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 className="mb-6 text-sm font-semibold text-heading uppercase">Legal</h2>
+                            <ul className="text-body font-medium">
+                                <li className="mb-4">
+                                    <a href="https://umamusume.com/policy/" className="hover:underline">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="https://umamusume.com/terms/" className="hover:underline">Terms &amp; Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-heading uppercase">Follow us</h2>
-                    <ul className="text-body font-medium">
-                        <li className="mb-4">
-                            <a href="https://www.youtube.com/@umamusume_eng" className="hover:underline ">
-                                <img src="https://parts.umamusume.com/assets/images/sns-youtube.svg" className="h-7 me-3" alt="YouTube" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://discord.gg/umamusume-eng" className="hover:underline">
-                                <img src="https://parts.umamusume.com/assets/images/sns-discord.svg" className="h-7 me-3" alt="Discord" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-heading uppercase">Legal</h2>
-                    <ul className="text-body font-medium">
-                        <li className="mb-4">
-                            <a href="https://umamusume.com/policy/" className="hover:underline">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://umamusume.com/terms/" className="hover:underline">Terms &amp; Conditions</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <hr class="my-6 border-default sm:mx-auto lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-body sm:text-center">© 2023 <a href="https://umamusume.jp/" class="hover:underline">Umamusume Project™</a>. All Rights Reserved.
-            </span>
-            {/* <div class="flex mt-4 sm:justify-center sm:mt-0">
-                <a href="#" class="text-body hover:text-heading">
+                <hr className="my-6 border-default sm:mx-auto lg:my-8" />
+                <div className="sm:flex sm:items-center sm:justify-between">
+                    <span className="text-sm text-body sm:text-center">© 2023 <a href="https://umamusume.jp/" className="hover:underline">Honkai Impact 3rd Project™</a>. All Rights Reserved.
+                    </span>
+                    {/* <div className="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="#" className="text-body hover:text-heading">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg>
                     <span class="sr-only">Facebook page</span>
                 </a>
@@ -80,10 +80,10 @@ const Footer = () => {
                     <span class="sr-only">Dribbble account</span>
                 </a>
             </div> */}
-        </div>
-        </div>
-    </footer>
-  )
+                </div>
+            </div>
+        </footer>
+    )
 }
 
 export default Footer

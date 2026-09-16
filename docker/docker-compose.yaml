@@ -1,0 +1,17 @@
+name: testingpost
+services:
+  postgrace:
+    image: postgres:18
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: testing
+      PGDATA: /var/Lib/postgresql/18/docker
+    volumes: 
+      - postgres-data:/var/lib/postgresql
+
+volumes:
+  postgres-data:
+    
