@@ -225,7 +225,7 @@ const SidebarHm = () => {
 
             {/* Twitter */}
             <a
-              href="https://twitter.com/umamusume"
+              href="https://x.com/HonkaiImpact3rd"
               className="opacity-40 hover:opacity-100 transition-opacity"
               title="X"
             >
@@ -268,23 +268,15 @@ const SidebarHm = () => {
 
             {/* Hoyolab */}
             <a
-              href="https://www.instagram.com/honkaiimpact3rd/"
+              href="https://www.hoyolab.com/home"
               className="opacity-40 hover:opacity-100 transition-opacity"
               title="Hoyolab"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f0f0f0" viewBox="0 0 80 80"><path d="m26 64-2-8 1-6-5-4q-2-2-1-3l2-1q3-2 3-5v-1q1-3 4-1v1q1-4 4-4 2-1 3 3l8-2h6l5-6q4-2 5 4l2 4 5 6a26 26 0 1 0-40 23m29-33v-2h-1q-2 2-3 5l1 1 1-1zm-19 8v2l13-3v-2l-6-1q-7 2-7 4m13 21q12-3 11-10-5-9-17-6-12 4-9 13c1 7 8 5 15 3M27 38h-1v1l-3 4-1 1v1l5 4v2h1v-2q0-3 3-5v-1l-1-1zm-2 7 2-2v-2l-2 1-1 1zm27 3v2l-2 1h2l2 2-2 1-3-1h-1l-1-1v-1l1-1 1-1 1-2zm-11 1 1 2 2 4-1 2h-2l-2-6z" alt="Hoyolab" /></svg>
             </a>
-
           </div>
-
-          <p className="mt-4 text-[7px] uppercase tracking-[0.2em] text-white/15">
-            System Online
-          </p>
-
         </div>
-
       </aside>
-
     </div>
   );
 };

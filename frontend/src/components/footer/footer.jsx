@@ -33,7 +33,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li>
                                 <a
-                                    href="https://twitter.com/umamusume"
+                                    href="https://x.com/HonkaiImpact3rd"
                                     className="text-[10px] uppercase tracking-[0.12em] text-white/45 hover:text-amber-500 transition-colors"
                                 >
                                     X / Twitter
@@ -41,7 +41,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.facebook.com/umamusume.eng"
+                                    href="https://www.facebook.com/global.honkaiimpact/"
                                     className="text-[10px] uppercase tracking-[0.12em] text-white/45 hover:text-amber-500 transition-colors"
                                 >
                                     Facebook
@@ -58,7 +58,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li>
                                 <a
-                                    href="https://www.youtube.com/@umamusume_eng"
+                                    href="https://www.youtube.com/channel/UCko6H6LokKM__B03i5_vBQQ"
                                     className="text-[10px] uppercase tracking-[0.12em] text-white/45 hover:text-amber-500 transition-colors"
                                 >
                                     YouTube
@@ -66,7 +66,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://discord.gg/umamusume-eng"
+                                    href="https://discord.com/invite/hi3"
                                     className="text-[10px] uppercase tracking-[0.12em] text-white/45 hover:text-amber-500 transition-colors"
                                 >
                                     Discord
