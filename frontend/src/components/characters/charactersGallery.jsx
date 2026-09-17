@@ -351,6 +351,8 @@ const carouselCharacters = useMemo(() => {
         <CharacterDetail
           character={selectedCharacter}
           getCharacterName={getCharacterName}
+          selectedBattlesuit={selectedBattlesuit}
+          onBattlesuitChange={handleBattlesuitChange}
           detailRef={detailRef}
           onBack={() => {
             setSelectedCharacter(null);
@@ -359,7 +361,7 @@ const carouselCharacters = useMemo(() => {
         />
       )}
 
-      {/* FACTION BADGE (only while browsing, no character selected) */}
+      {/* FACTION BADGE */}
 
       {!selectedCharacter && (
         <FactionBadge faction={selectedFaction} />
@@ -407,16 +409,6 @@ const carouselCharacters = useMemo(() => {
           />
         )}
       </div>
-
-      {/* BATTLESUIT SELECTOR */}
-
-      {selectedCharacter && (
-        <BattlesuitSelector
-          battlesuits={selectedCharacter.battlesuits}
-          selectedBattlesuit={selectedBattlesuit}
-          onBattlesuitChange={handleBattlesuitChange}
-        />
-      )}
 
     </section>
   );

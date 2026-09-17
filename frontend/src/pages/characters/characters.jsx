@@ -9,7 +9,7 @@ const Characters = () => {
     fetch("http://localhost:3000/characters")
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to fetch characters");
+          throw new Error("Raiso terhubung ke fetch characters");
         }
 
         return response.json();

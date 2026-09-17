@@ -8,14 +8,11 @@ const BattlesuitSelector = ({
   return (
     <div
       className="
-        absolute
-        bottom-[10%]
-        left-[17%]
-        z-30
         grid
-        w-74
+        w-full
         grid-cols-5
         gap-3
+        pt-4
       "
     >
       {battlesuits

@@ -24,7 +24,6 @@ const Footer = () => {
                         </p>
                     </div>
 
-
                     {/* Official Social Media */}
                     <div>
                         <h2 className="mb-5 text-[9px] font-semibold uppercase tracking-[0.25em] text-white/35">
@@ -79,11 +78,9 @@ const Footer = () => {
 
                     {/* Legal */}
                     <div>
-
                         <h2 className="mb-5 text-[9px] font-semibold uppercase tracking-[0.25em] text-white/35">
                             Legal
                         </h2>
-
                         <ul className="space-y-3">
                             <li>
                                 <a
@@ -112,9 +109,6 @@ const Footer = () => {
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <span className="text-[8px] uppercase tracking-[0.18em] text-white/20">
                         © 2023 Honkai Impact 3rd Project™. All Rights Reserved.
-                    </span>
-                    <span className="text-[8px] uppercase tracking-[0.25em] text-amber-500/30">
-                        System Online
                     </span>
                 </div>
             </div>

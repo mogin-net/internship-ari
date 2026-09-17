@@ -1,4 +1,5 @@
 import React from 'react';
+import BattlesuitSelector from './battlesuitSelector';
 
 const Info = ({ label, value }) => (
   <div>
@@ -15,6 +16,8 @@ const Info = ({ label, value }) => (
 const CharacterDetail = ({
   character,
   getCharacterName,
+  selectedBattlesuit,
+  onBattlesuitChange,
   detailRef,
   onBack,
 }) => {
@@ -96,10 +99,16 @@ const CharacterDetail = ({
           'No description available.'}
       </p>
 
-      <div className="mt-10 mb-10">
-        <p className="text-sm uppercase tracking-[0.2em] text-white/35">
+      <div className="mt-8 pb-8">
+        <p className="text-sm uppercase tracking-[0.2em] text-white/55">
           Battlesuit
         </p>
+
+        <BattlesuitSelector
+          battlesuits={character.battlesuits}
+          selectedBattlesuit={selectedBattlesuit}
+          onBattlesuitChange={onBattlesuitChange}
+        />
       </div>
     </div>
   );

@@ -112,6 +112,7 @@ const CharacterCarousel = ({
                 `}
               >
                 {getCharacterName(character)}
+                
               </p>
             </div>
           </div>
