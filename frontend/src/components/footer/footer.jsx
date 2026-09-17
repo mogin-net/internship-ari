@@ -84,7 +84,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li>
                                 <a
-                                    href="https://umamusume.com/policy/"
+                                    href="https://honkaiimpact3.hoyoverse.com/asia/en-us/privacy"
                                     className="text-[10px] uppercase tracking-[0.12em] text-white/45 hover:text-amber-500 transition-colors"
                                 >
                                     Privacy Policy
@@ -92,7 +92,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://umamusume.com/terms/"
+                                    href="https://honkaiimpact3.hoyoverse.com/asia/en-us/terms"
                                     className="text-[10px] uppercase tracking-[0.12em] text-white/45 hover:text-amber-500 transition-colors"
                                 >
                                     Terms & Conditions
