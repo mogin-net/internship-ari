@@ -18,15 +18,24 @@ export type HttpResponse<T> = {
   success: true;
   data?: T;
 };
-export type Character = {
+
+export interface Battlesuit {
+  id: number;
+  name: string;
+  icon: string | null;
+  image: string | null;
+};
+
+export interface Character {
   id: number;
   firstName: string;
   lastName: string | null;
-  birthday: string;
-  birthplace: string;
-  fraction: string;
-  height: number;
-  weight: number;
-  image: string;
-  description: string;
+  birthday: string | null;
+  birthplace: string | null;
+  faction: string | null;
+  height: number | null;
+  weight: number | null;
+  description: string | null;
+  image: string | null;
+  battlesuits: Battlesuit[];
 };

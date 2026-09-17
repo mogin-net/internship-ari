@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Interface = () => {
   return (
     <div
-      className="relative bg-cover bg-center bg-no-repeat font-family"
+      className="relative bg-cover bg-center bg-no-repeat"
     >
       <div className="bgV">
         <video autoPlay muted loop className="w-full h-full object-cover">

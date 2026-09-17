@@ -15,20 +15,56 @@ const characters = [
       {
         id: 'white-comet',
         name: 'White Comet',
-        icon: 'assets/img/coverChar/Kiana.webp',
-        image: 'assets/img/coverChar/Kiana.webp'
+        icon: '/assets/img/battlesuits/icons/kiana/WhiteCometIcon.webp',
+        image: '/assets/img/battlesuits/kiana/WhiteComet.webp'
       },
       {
-        id: 'void',
+        id: 'valkyrie-ranger',
+        name: 'Valkyrie Ranger',
+        icon: '/assets/img/battlesuits/icons/kiana/ValkyrieRangerIcon.webp',
+        image: '/assets/img/battlesuits/kiana/ValkyrieRanger.webp'
+      },
+      {
+        id: 'divine-prayer',
+        name: 'Divine Prayer',
+        icon: '/assets/img/battlesuits/icons/kiana/DivinePrayerIcon.webp',
+        image: '/assets/img/battlesuits/kiana/DivinePrayer.webp'
+      },
+      {
+        id: 'knight-moonbeam',
+        name: 'Knight Moonbeam',
+        icon: '/assets/img/battlesuits/icons/kiana/KnightMoonbeamIcon.webp',
+        image: '/assets/img/battlesuits/kiana/KnightMoonbeam.webp'
+      },
+      {
+        id: 'herrscher-of-the-void',
         name: 'Herrscher of the Void',
-        icon: '/assets/battlesuits/icons/kiana-void.png',
-        image: '/assets/battlesuits/kiana-void.png'
+        icon: '/assets/img/battlesuits/icons/kiana/HerrscheroftheVoidIcon.webp',
+        image: '/assets/img/battlesuits/kiana/HerrscheroftheVoid.webp'
       },
       {
-        id: 'flamescion',
+        id: 'void-drifter',
+        name: 'Void Drifter',
+        icon: '/assets/img/battlesuits/icons/kiana/VoidDrifterIcon.webp',
+        image: '/assets/img/battlesuits/kiana/VoidDrifter.webp'
+      },
+      {
+        id: 'herrscher-of-flamescion',
         name: 'Herrscher of Flamescion',
-        icon: '/assets/battlesuits/icons/kiana-flamescion.png',
-        image: '/assets/battlesuits/kiana-flamescion.png'
+        icon: '/assets/img/battlesuits/icons/kiana/HerrscherofFlamescionIcon.webp',
+        image: '/assets/img/battlesuits/kiana/HerrscherofFlamescion.webp'
+      },
+      {
+        id: 'herrscher-of-finality',
+        name: 'Herrscher of Finality',
+        icon: '/assets/img/battlesuits/icons/kiana/HerrscherofFinalityIcon.webp',
+        image: '/assets/img/battlesuits/kiana/HerrscherofFinality.webp'
+      },
+      {
+        id: 'ba-dum-fiery-wishing-star',
+        name: 'Ba-Dum! Fiery Wishing Star',
+        icon: '/assets/img/battlesuits/icons/kiana/BaDumIcon.webp',
+        image: '/assets/img/battlesuits/kiana/BaDum.webp'
       }
     ]
   },
@@ -137,18 +173,19 @@ const characters = [
       {
         id: 'miss-pink-elf',
         name: 'Miss Pink Elf♪',
-        icon: '/assets/img/battlesuits/icons/MissPinkElfIcon.webp',
-        image: '/assets/img/battlesuits/MissPinkElf.webp'
+        icon: '/assets/img/battlesuits/icons/elysia/MissPinkElfIcon.webp',
+        image: '/assets/img/battlesuits/elysia/MissPinkElf.webp'
       },
       {
         id: 'herrscher-human',
         name: 'Herrscher of Human: Ego',
-        icon: '/assets/img/battlesuits/icons/HerrscherofHumanEgoIcon.webp',
-        image: '/assets/img/battlesuits/HerrscherofHumanEgo.webp'
-      }
+        icon: '/assets/img/battlesuits/icons/elysia/HerrscherofHumanEgoIcon.webp',
+        image: '/assets/img/battlesuits/elysia/HerrscherofHumanEgo.webp'
+      },
     ]
   }
   // End
+
 ];
 
 export default characters;
