@@ -12,6 +12,7 @@ import AnimePg from './pages/content/partials/animePg'
 import GamePg from './pages/content/partials/gamePg'
 import MangaPg from './pages/content/partials/mangaPg'
 import MusicPg from './pages/content/partials/musicPg'
+import Lore from './pages/lore/lore'
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Interface />} />
           <Route path="/characters" element={<Characters />} />
-          <Route path="/contents" element={<Contents />} />
+          <Route path="/lore" element={<Lore />} />
           <Route path="/news" element={<News />} />
+          <Route path="/contents" element={<Contents />} />
           <Route path="/anime" element={<AnimePg />} />
           <Route path="/game" element={<GamePg />} />
           <Route path="/manga" element={<MangaPg />} />

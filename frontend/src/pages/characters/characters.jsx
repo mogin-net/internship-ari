@@ -1,6 +1,6 @@
-import {React, useEffect, useState} from 'react';
-import characters from '../../data/characters';
-import CharacterGallery from '../../components/characters/charactersGallery';
+import { React, useEffect, useState } from "react";
+import characters from "../../data/characters";
+import CharacterGallery from "../../components/characters/charactersGallery";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -22,9 +22,7 @@ const Characters = () => {
       });
   }, []);
 
-  return (
-    <CharacterGallery characters={characters} />
-  );
+  return <CharacterGallery characters={characters} />;
 };
 
 export default Characters;

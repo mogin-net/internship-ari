@@ -24,7 +24,7 @@ export interface Battlesuit {
   name: string;
   icon: string | null;
   image: string | null;
-};
+}
 
 export interface Character {
   id: number;
@@ -38,4 +38,22 @@ export interface Character {
   description: string | null;
   image: string | null;
   battlesuits: Battlesuit[];
-};
+}
+
+export interface News {
+  id: number;
+  title: string;
+  category: string;
+  slug: string;
+  thumbnail: string | null;
+  publishedAt: string | null;
+  createdAt: string;
+  blocks?: NewsBlock[];
+}
+
+export interface NewsBlock {
+  id: number;
+  type: string;
+  content: string;
+  sortOrder: number;
+}

@@ -1,32 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+
+import NewsGallery from "../../components/news/newsGallery";
+import NewsDetail from "../../components/news/newsDetail";
 
 const News = () => {
+  const [selectedNews, setSelectedNews] = useState(null);
+
   return (
-    <div
-      className="relative bg-cover bg-center bg-no-repeat"
-    >
-      <div className="bgV">
-        <video autoPlay muted loop className="w-full h-full object-cover">
-          <source src="https://fastcdn.hoyoverse.com/mi18n/bh3_global/m20230317hy14h0glc0/upload/b5bc75b1ce923c4ae5a093950d6bb216_3460498006874666439.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div className="absolute inset-0 bg-black/30">
-        <div className="flex flex-col justify-center items-center h-full text-center px-4">
-          <h1 className="text-white text-5xl font-semibold mb-4 animate__animated animate__fadeInUp">
-            News Page Is Not Available For Now...
-          </h1>
+    <main className="relative min-h-screen overflow-hidden bg-[#101010] text-white">
+      {!selectedNews ? (
+        <NewsGallery onSelectNews={setSelectedNews} />
+      ) : (
+        <NewsDetail news={selectedNews} onBack={() => setSelectedNews(null)} />
+      )}
+    </main>
+  );
+};
 
-          <Link
-            to="/home"
-            className="border border-white text-white text-lg px-6 py-3 hover:bg-white hover:text-black transition-colors animate__animated animate__fadeInUp animate__delay-1s"
-          >
-            Back to Homepage~
-          </Link>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default News
+export default News;

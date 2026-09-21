@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
@@ -11,17 +11,13 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () =>
-      document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const toggleBgMusic = () => {
@@ -41,14 +37,9 @@ const Navbar = () => {
 
   return (
     <>
-      <audio
-        ref={audioRef}
-        src={Bgmusic}
-        loop
-      />
+      <audio ref={audioRef} src={Bgmusic} loop />
       <nav className="fixed top-0 inset-s-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.35)]">
         <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto px-5 py-3">
-
           {/* Logo */}
           <a
             href="/"
@@ -63,9 +54,7 @@ const Navbar = () => {
               <p className="text-[9px] tracking-[0.3em] uppercase text-white/35">
                 Project
               </p>
-              <p className="text-xs tracking-[0.18em] text-white/75">
-                HONKAI
-              </p>
+              <p className="text-xs tracking-[0.18em] text-white/75">HONKAI</p>
             </div>
           </a>
 
@@ -82,9 +71,11 @@ const Navbar = () => {
               </button>
             </div>
 
-
             {/* Get Started */}
-            <a href="https://honkaiimpact3.hoyoverse.com/asia/en-us/home" target="_blank" rel="noopener noreferrer"
+            <a
+              href="https://honkaiimpact3.hoyoverse.com/asia/en-us/home"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <button
                 type="button"
@@ -95,14 +86,13 @@ const Navbar = () => {
             </a>
           </div>
 
-
           {/* Navigation */}
           <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">
             <ul className="flex flex-col items-center p-3 font-medium border border-white/10 rounded-md bg-black/70 backdrop-blur-xl md:flex-row md:space-x-7 md:border-0 md:bg-transparent">
               <li className="flex items-center">
                 <a
                   href="/home"
-                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] transition-colors md:p-0 ${location.pathname === '/home' ? 'text-amber-500' : 'text-white/55 hover:text-amber-500'}`}
+                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] transition-colors md:p-0 ${location.pathname === "/home" ? "text-amber-500" : "text-white/55 hover:text-amber-500"}`}
                 >
                   Home(Alpha)
                 </a>
@@ -110,16 +100,16 @@ const Navbar = () => {
               <li className="flex items-center">
                 <a
                   href="/news"
-                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === '/news' ? 'text-amber-500' : 'text-white/55 hover:text-amber-500'}`}
+                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === "/news" ? "text-amber-500" : "text-white/55 hover:text-amber-500"}`}
                 >
-                  News(Ongoing)
+                  News(Alpha)
                 </a>
               </li>
 
               <li className="flex items-center">
                 <a
                   href="/characters"
-                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === '/characters' ? 'text-amber-500' : 'text-white/55 hover:text-amber-500'}`}
+                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === "/characters" ? "text-amber-500" : "text-white/55 hover:text-amber-500"}`}
                 >
                   Characters(Alpha)
                 </a>
@@ -127,22 +117,22 @@ const Navbar = () => {
 
               <li className="flex items-center">
                 <a
-                  href="/news"
-                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === '/news' ? 'text-amber-500' : 'text-white/55 hover:text-amber-500'}`}
+                  href="/lore"
+                  className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === "/lore" ? "text-amber-500" : "text-white/55 hover:text-amber-500"}`}
                 >
                   Lore(Ongoing)
                 </a>
               </li>
-              
+
               {/* Content Dropdown */}
               <li
-                className={`relative flex items-center ${location.pathname === '/contents' ? 'text-amber-500' : ''}`}
+                className={`relative flex items-center ${location.pathname === "/contents" ? "text-amber-500" : ""}`}
                 ref={dropdownRef}
               >
                 <div className="flex items-center">
                   <a
                     href="/contents"
-                    className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === '/contents' ? 'text-amber-500' : 'text-white/55 hover:text-amber-500'}`}
+                    className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === "/contents" ? "text-amber-500" : "text-white/55 hover:text-amber-500"}`}
                   >
                     Content(Ongoing)
                   </a>
@@ -158,7 +148,6 @@ const Navbar = () => {
 
                 {dropdownOpen && (
                   <div className="absolute top-full left-0 mt-3 w-44 bg-black/90 backdrop-blur-xl rounded-md border border-white/10 shadow-2xl overflow-hidden">
-
                     <a
                       href="/game"
                       className="block px-4 py-3 text-[10px] uppercase tracking-[0.15em] text-white/55 hover:text-amber-500 hover:bg-white/5 transition-colors"
@@ -186,18 +175,12 @@ const Navbar = () => {
                     >
                       Music(Ongoing)
                     </a>
-
                   </div>
                 )}
-
               </li>
-
             </ul>
-
           </div>
-
         </div>
-
       </nav>
     </>
   );

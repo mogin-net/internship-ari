@@ -18,7 +18,6 @@ const CharacterGallery = ({ characters = [] }) => {
   const [selectedFaction, setSelectedFaction] = useState('All');
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [selectedBattlesuit, setSelectedBattlesuit] = useState(null);
-
   const galleryRef = useRef(null);
   const detailRef = useRef(null);
   const factionRef = useRef(null);
@@ -93,8 +92,6 @@ const carouselCharacters = useMemo(() => {
   const selected =
     filteredCharacters[selectedIndex];
 
-  // Kalau hanya ada 1 karakter,
-  // jangan duplikasikan karakter tersebut
   if (filteredCharacters.length === 1) {
     return [selected];
   }
