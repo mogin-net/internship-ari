@@ -21,6 +21,7 @@ export type HttpResponse<T> = {
 
 export interface Battlesuit {
   id: number;
+  characterId: number;
   name: string;
   icon: string | null;
   image: string | null;
@@ -36,7 +37,7 @@ export interface Character {
   height: number | null;
   weight: number | null;
   description: string | null;
-  image: string | null;
+  image: string;
   battlesuits: Battlesuit[];
 }
 

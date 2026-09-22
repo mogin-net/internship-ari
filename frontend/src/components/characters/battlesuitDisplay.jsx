@@ -1,9 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const BattlesuitDisplay = ({
-  battlesuit,
-  battlesuitRef,
-}) => {
+const BattlesuitDisplay = ({ battlesuit, battlesuitRef }) => {
   return (
     <div
       ref={battlesuitRef}
@@ -24,16 +21,16 @@ const BattlesuitDisplay = ({
       {battlesuit && (
         <>
           <img
-            src={battlesuit.image}
+            src={`http://localhost:3000/battlesuits/${battlesuit.id}/image`}
             alt={battlesuit.name}
             draggable="false"
             className="
-              h-[90%]
-              w-full
-              select-none
-              object-contain
-              drop-shadow-[0_25px_40px_rgba(0,0,0,0.85)]
-            "
+            h-[90%]
+            w-full
+            select-none
+            object-contain
+            drop-shadow-[0_25px_40px_rgba(0,0,0,0.85)]
+          "
           />
 
           <p

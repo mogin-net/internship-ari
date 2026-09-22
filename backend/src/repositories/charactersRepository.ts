@@ -3,9 +3,7 @@ import { DatabaseError } from "../errors/appError.js";
 import { query } from "../util/pg.js";
 
 export class CharactersRepository {
-  static async getCharacterById(
-    id: number,
-  ): Promise<Character | null> {
+  static async getCharacterById(id: number): Promise<Character | null> {
     try {
       const data = await query<Character>(
         `
@@ -49,9 +47,7 @@ export class CharactersRepository {
       return data.rows[0] ?? null;
     } catch (error) {
       console.error(error);
-      throw new DatabaseError(
-        "Failed to get character from database",
-      );
+      throw new DatabaseError("Failed to get character from database");
     }
   }
 
@@ -73,12 +69,13 @@ export class CharactersRepository {
 
         COALESCE(
           json_agg(
-            json_build_object(
-              'id', b.id,
-              'name', b.name,
-              'icon', b.icon,
-              'image', b.image
-            )
+          json_build_object(
+            'id', b.id,
+            'characterId', b.character_id,
+            'name', b.name,
+            'icon', b.icon,
+            'image', b.image
+          )
             ORDER BY b.id
           ) FILTER (WHERE b.id IS NOT NULL),
           '[]'
@@ -98,9 +95,7 @@ export class CharactersRepository {
       return data.rows;
     } catch (error) {
       console.error(error);
-      throw new DatabaseError(
-        "Failed to get characters from database",
-      );
+      throw new DatabaseError("Failed to get characters from database");
     }
   }
 }

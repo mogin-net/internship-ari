@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const CharacterCarousel = ({
   characters,
@@ -19,18 +19,14 @@ const CharacterCarousel = ({
       "
     >
       {characters.map((character, index) => {
-        const isSelected =
-          selectedCharacter?.id === character.id;
+        const isSelected = selectedCharacter?.id === character.id;
 
-        const isNext =
-          selectedCharacter && index === 1;
+        const isNext = selectedCharacter && index === 1;
 
         return (
           <div
             key={character.id}
-            onClick={() =>
-              onCharacterClick(character)
-            }
+            onClick={() => onCharacterClick(character)}
             className={`
               group
               relative
@@ -44,37 +40,32 @@ const CharacterCarousel = ({
               ${
                 selectedCharacter
                   ? isSelected
-                    ? 'w-[220px] min-w-[220px] scale-[1.005]'
-                    : 'w-[90px] min-w-[90px]'
-                  : 'w-[150px] min-w-[150px]'
+                    ? "w-[220px] min-w-[220px] scale-[1.005]"
+                    : "w-[90px] min-w-[90px]"
+                  : "w-[150px] min-w-[150px]"
               }
 
               ${
                 isNext
-                  ? 'after:absolute after:inset-y-0 after:right-0 after:w-full after:bg-gradient-to-r after:from-transparent after:via-black/40 after:to-black after:backdrop-blur-[2px]'
-                  : ''
+                  ? "after:absolute after:inset-y-0 after:right-0 after:w-full after:bg-gradient-to-r after:from-transparent after:via-black/40 after:to-black after:backdrop-blur-[2px]"
+                  : ""
               }
             `}
           >
             <img
-              src={character.image}
+              src={`http://localhost:3000/characters/${character.id}/image`}
               alt={getCharacterName(character)}
               draggable="false"
               className={`
-                h-full
-                w-full
-                select-none
-                object-cover
-                object-center
-                transition-all
-                duration-500
-
-                ${
-                  isSelected
-                    ? 'grayscale-0 brightness-100'
-                    : 'grayscale brightness-[0.4]'
-                }
-              `}
+              h-full
+              w-full
+              select-none
+              object-cover
+              object-center
+              transition-all
+              duration-500
+              ${isSelected ? "grayscale-0 brightness-100" : "grayscale brightness-[0.4]"}
+            `}
             />
 
             <div
@@ -106,13 +97,12 @@ const CharacterCarousel = ({
 
                   ${
                     isSelected
-                      ? 'text-base text-white'
-                      : 'text-xs text-white/40'
+                      ? "text-base text-white"
+                      : "text-xs text-white/40"
                   }
                 `}
               >
                 {getCharacterName(character)}
-                
               </p>
             </div>
           </div>

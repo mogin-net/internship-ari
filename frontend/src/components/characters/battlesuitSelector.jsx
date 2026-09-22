@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const BattlesuitSelector = ({
   battlesuits = [],
@@ -15,19 +15,15 @@ const BattlesuitSelector = ({
         pt-4
       "
     >
-      {battlesuits
-        .map((battlesuit) => {
-          const isSelected =
-            selectedBattlesuit?.id === battlesuit.id;
+      {battlesuits.map((battlesuit) => {
+        const isSelected = selectedBattlesuit?.id === battlesuit.id;
 
-          return (
-            <button
-              key={battlesuit.id}
-              onClick={() =>
-                onBattlesuitChange(battlesuit)
-              }
-              title={battlesuit.name}
-              className={`
+        return (
+          <button
+            key={battlesuit.id}
+            onClick={() => onBattlesuitChange(battlesuit)}
+            title={battlesuit.name}
+            className={`
                 relative
                 h-14
                 w-14
@@ -38,24 +34,24 @@ const BattlesuitSelector = ({
 
                 ${
                   isSelected
-                    ? 'scale-110 border-white'
-                    : 'border-white/20 opacity-60 hover:scale-105 hover:border-white/60 hover:opacity-100'
+                    ? "scale-110 border-white"
+                    : "border-white/20 opacity-60 hover:scale-105 hover:border-white/60 hover:opacity-100"
                 }
               `}
-            >
-              <img
-                src={battlesuit.icon}
-                alt={battlesuit.name}
-                draggable="false"
-                className="
-                  h-full
-                  w-full
-                  object-cover
-                "
-              />
-            </button>
-          );
-        })}
+          >
+            <img
+              src={`http://localhost:3000/battlesuits/${battlesuit.id}/icon`}
+              alt={battlesuit.name}
+              draggable="false"
+              className="
+              h-full
+              w-full
+              object-cover
+            "
+            />
+          </button>
+        );
+      })}
     </div>
   );
 };
