@@ -26,6 +26,7 @@ const CharacterCarousel = ({
         return (
           <div
             key={character.id}
+            data-character-id={character.id}
             onClick={() => onCharacterClick(character)}
             className={`
               group
@@ -34,7 +35,7 @@ const CharacterCarousel = ({
               shrink-0
               cursor-pointer
               overflow-hidden
-              transition-all
+              transition-[width,scale]
               duration-500
 
               ${

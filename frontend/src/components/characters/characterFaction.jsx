@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 export const factionLogos = {
-  All: '/assets/img/factions/ValkyrieIcon.webp',
-  Schicksal: '/assets/img/factions/SchicksalIcon.webp',
-  MOTH: '/assets/img/factions/MOTHIcon.webp',
-  'Anti-Entropy': '/assets/img/factions/antientropy.png',
-  'World Serpent': '/assets/img/factions/WorldSerpentIcon.png',
+  All: "/assets/img/factions/ValkyrieIcon.webp",
+  Schicksal: "/assets/img/factions/SchicksalIcon.webp",
+  MOTH: "/assets/img/factions/MOTHIcon.webp",
+  "Anti-Entropy": "/assets/img/factions/AntiEntropy.webp",
+  "World Serpent": "/assets/img/factions/WorldSerpentIcon.png",
 };
 
 const CharacterFaction = ({
@@ -49,9 +49,10 @@ const CharacterFaction = ({
                 text-left
                 transition-all duration-300
 
-                ${isSelected
-                  ? 'border-white bg-white/[0.06]'
-                  : 'border-white/10 hover:border-white/40 hover:bg-white/[0.03]'
+                ${
+                  isSelected
+                    ? "border-white bg-white/[0.06]"
+                    : "border-white/10 hover:border-white/40 hover:bg-white/[0.03]"
                 }
               `}
             >
@@ -76,9 +77,10 @@ const CharacterFaction = ({
                     rounded-full border
                     transition-all duration-300
 
-                    ${isSelected
-                      ? 'border-white/70 bg-white/10'
-                      : 'border-white/15 bg-white/[0.02] group-hover:border-white/40'
+                    ${
+                      isSelected
+                        ? "border-white/70 bg-white/10"
+                        : "border-white/15 bg-white/[0.02] group-hover:border-white/40"
                     }
                   `}
                 >
@@ -89,13 +91,11 @@ const CharacterFaction = ({
                       h-6 w-6 object-contain
                       transition-all duration-300
 
-                      ${faction === 'MOTH'
-                        ? 'brightness-200 saturate-150'
-                        : ''
-                      }
-                      ${isSelected
-                        ? 'opacity-100'
-                        : 'opacity-40 grayscale group-hover:opacity-70'
+                      ${faction === "MOTH" ? "brightness-200 saturate-150" : ""}
+                      ${
+                        isSelected
+                          ? "opacity-100"
+                          : "opacity-40 grayscale group-hover:opacity-70"
                       }
                     `}
                   />
@@ -108,9 +108,10 @@ const CharacterFaction = ({
                     tracking-[0.12em]
                     transition-all duration-300
 
-                    ${isSelected
-                      ? 'text-white'
-                      : 'text-white/35 group-hover:text-white/70'
+                    ${
+                      isSelected
+                        ? "text-white"
+                        : "text-white/35 group-hover:text-white/70"
                     }
                   `}
                 >

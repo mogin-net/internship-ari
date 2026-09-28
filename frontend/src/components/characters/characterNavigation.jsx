@@ -1,18 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const CharacterNavigation = ({
-  onPrevious,
-  onNext,
-}) => {
+const CharacterNavigation = ({ onPrevious, onNext, variant = "detail" }) => {
   return (
     <div
-      className="
-        z-30
-        flex
-        w-full
-        justify-end
-        gap-2
-      "
+      className={
+        variant === "carousel"
+          ? "z-30 flex w-full items-center justify-between"
+          : "z-30 flex w-full justify-end gap-2"
+      }
     >
       <button
         onClick={onPrevious}

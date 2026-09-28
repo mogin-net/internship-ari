@@ -15,9 +15,12 @@ import {
 } from "./src/middlewares/errorHandler.js";
 import db from "./src/util/pg.js";
 import cors from "cors";
+import { requestLogger } from "./src/util/logger.js";
 
 const app: Express = express();
 await db.connect();
+
+app.use(requestLogger);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

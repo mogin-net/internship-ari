@@ -1,5 +1,13 @@
 name: testingpost
 services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - postgrace
   postgrace:
     image: postgres:18
     restart: always
@@ -9,9 +17,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: testing
       PGDATA: /var/Lib/postgresql/18/docker
-    volumes: 
+    volumes:
       - postgres-data:/var/lib/postgresql
 
 volumes:
   postgres-data:
-    

@@ -1,21 +1,16 @@
-import React, {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import gsap from "gsap";
 
-import CharacterFaction from './characterFaction';
-import CharacterDetail from './characterDetail';
-import CharacterCarousel from './characterCarousel';
-import BattlesuitDisplay from './battlesuitDisplay';
-import BattlesuitSelector from './battlesuitSelector';
-import CharacterNavigation from './characterNavigation';
-import FactionBadge from './factionbadge';
+import CharacterFaction from "./characterFaction";
+import CharacterDetail from "./characterDetail";
+import CharacterCarousel from "./characterCarousel";
+import BattlesuitDisplay from "./battlesuitDisplay";
+import BattlesuitSelector from "./battlesuitSelector";
+import CharacterNavigation from "./characterNavigation";
+import FactionBadge from "./factionbadge";
 
 const CharacterGallery = ({ characters = [] }) => {
-  const [selectedFaction, setSelectedFaction] = useState('All');
+  const [selectedFaction, setSelectedFaction] = useState("All");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [selectedBattlesuit, setSelectedBattlesuit] = useState(null);
   const galleryRef = useRef(null);
@@ -30,13 +25,13 @@ const CharacterGallery = ({ characters = [] }) => {
    */
 
   const getCharacterName = (character) => {
-    if (!character) return '';
+    if (!character) return "";
 
-    if (character.firstName === 'Mei') {
-      return `${character.lastName || ''} ${character.firstName}`.trim();
+    if (character.firstName === "Mei") {
+      return `${character.lastName || ""} ${character.firstName}`.trim();
     }
 
-    return `${character.firstName || ''} ${character.lastName || ''}`.trim();
+    return `${character.firstName || ""} ${character.lastName || ""}`.trim();
   };
 
   /*
@@ -50,7 +45,7 @@ const CharacterGallery = ({ characters = [] }) => {
       .map((character) => character.faction)
       .filter(Boolean);
 
-    return ['All', ...new Set(values)];
+    return ["All", ...new Set(values)];
   }, [characters]);
 
   /*
@@ -60,12 +55,12 @@ const CharacterGallery = ({ characters = [] }) => {
    */
 
   const filteredCharacters = useMemo(() => {
-    if (selectedFaction === 'All') {
+    if (selectedFaction === "All") {
       return characters;
     }
 
     return characters.filter(
-      (character) => character.faction === selectedFaction
+      (character) => character.faction === selectedFaction,
     );
   }, [characters, selectedFaction]);
 
@@ -75,38 +70,30 @@ const CharacterGallery = ({ characters = [] }) => {
    * =========================================================
    */
 
-const carouselCharacters = useMemo(() => {
-  if (!selectedCharacter) {
-    return filteredCharacters;
-  }
+  const carouselCharacters = useMemo(() => {
+    if (!selectedCharacter) {
+      return filteredCharacters;
+    }
 
-  const selectedIndex = filteredCharacters.findIndex(
-    (character) =>
-      character.id === selectedCharacter.id
-  );
+    const selectedIndex = filteredCharacters.findIndex(
+      (character) => character.id === selectedCharacter.id,
+    );
 
-  if (selectedIndex === -1) {
-    return filteredCharacters;
-  }
+    if (selectedIndex === -1) {
+      return filteredCharacters;
+    }
 
-  const selected =
-    filteredCharacters[selectedIndex];
+    const selected = filteredCharacters[selectedIndex];
 
-  if (filteredCharacters.length === 1) {
-    return [selected];
-  }
+    if (filteredCharacters.length === 1) {
+      return [selected];
+    }
 
-  const next =
-    filteredCharacters[
-      (selectedIndex + 1) %
-        filteredCharacters.length
-    ];
+    const next =
+      filteredCharacters[(selectedIndex + 1) % filteredCharacters.length];
 
-  return [selected, next];
-}, [
-  filteredCharacters,
-  selectedCharacter,
-]);
+    return [selected, next];
+  }, [filteredCharacters, selectedCharacter]);
 
   /*
    * =========================================================
@@ -117,14 +104,12 @@ const carouselCharacters = useMemo(() => {
   const handleCharacterClick = (character) => {
     setSelectedCharacter(character);
 
-    setSelectedBattlesuit(
-      character.battlesuits?.[0] || null
-    );
+    setSelectedBattlesuit(character.battlesuits?.[0] || null);
 
     if (galleryRef.current) {
       gsap.to(galleryRef.current, {
         duration: 0.6,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
     }
 
@@ -139,8 +124,8 @@ const carouselCharacters = useMemo(() => {
           x: 0,
           opacity: 1,
           duration: 0.7,
-          ease: 'power3.out',
-        }
+          ease: "power3.out",
+        },
       );
     }
 
@@ -155,8 +140,8 @@ const carouselCharacters = useMemo(() => {
           opacity: 1,
           x: 0,
           duration: 0.5,
-          ease: 'power2.out',
-        }
+          ease: "power2.out",
+        },
       );
     }
 
@@ -173,8 +158,8 @@ const carouselCharacters = useMemo(() => {
           x: 0,
           scale: 1,
           duration: 0.7,
-          ease: 'power3.out',
-        }
+          ease: "power3.out",
+        },
       );
     }
   };
@@ -189,18 +174,13 @@ const carouselCharacters = useMemo(() => {
     if (!filteredCharacters.length) return;
 
     const currentIndex = filteredCharacters.findIndex(
-      (character) =>
-        character.id === selectedCharacter?.id
+      (character) => character.id === selectedCharacter?.id,
     );
 
     const nextIndex =
-      currentIndex === -1
-        ? 0
-        : (currentIndex + 1) % filteredCharacters.length;
+      currentIndex === -1 ? 0 : (currentIndex + 1) % filteredCharacters.length;
 
-    handleCharacterClick(
-      filteredCharacters[nextIndex]
-    );
+    handleCharacterClick(filteredCharacters[nextIndex]);
   };
 
   /*
@@ -213,8 +193,7 @@ const carouselCharacters = useMemo(() => {
     if (!filteredCharacters.length) return;
 
     const currentIndex = filteredCharacters.findIndex(
-      (character) =>
-        character.id === selectedCharacter?.id
+      (character) => character.id === selectedCharacter?.id,
     );
 
     const previousIndex =
@@ -223,9 +202,7 @@ const carouselCharacters = useMemo(() => {
         : (currentIndex - 1 + filteredCharacters.length) %
           filteredCharacters.length;
 
-    handleCharacterClick(
-      filteredCharacters[previousIndex]
-    );
+    handleCharacterClick(filteredCharacters[previousIndex]);
   };
 
   /*
@@ -260,8 +237,8 @@ const carouselCharacters = useMemo(() => {
           opacity: 1,
           scale: 1,
           duration: 0.45,
-          ease: 'power2.out',
-        }
+          ease: "power2.out",
+        },
       );
     }
   };
@@ -312,7 +289,6 @@ const carouselCharacters = useMemo(() => {
         text-white
     "
     >
-
       {/* BACKGROUND */}
 
       <div
@@ -360,9 +336,7 @@ const carouselCharacters = useMemo(() => {
 
       {/* FACTION BADGE */}
 
-      {!selectedCharacter && (
-        <FactionBadge faction={selectedFaction} />
-      )}
+      {!selectedCharacter && <FactionBadge faction={selectedFaction} />}
 
       {/* BATTLESUIT */}
 
@@ -386,8 +360,8 @@ const carouselCharacters = useMemo(() => {
 
           ${
             selectedCharacter
-                ? 'right-[2%] top-[calc(50%+4rem)] w-[26%]'
-                : 'left-[calc(34%+10px)] right-[2%] top-[calc(50%+2.5rem)]'
+              ? "right-[2%] top-[calc(50%+4rem)] w-[26%]"
+              : "left-[calc(34%+10px)] right-[2%] top-[calc(50%+2.5rem)]"
           }
         `}
       >
@@ -406,7 +380,6 @@ const carouselCharacters = useMemo(() => {
           />
         )}
       </div>
-
     </section>
   );
 };
