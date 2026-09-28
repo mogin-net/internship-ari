@@ -1,14 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Contents = () => {
-   return (
-    <div
-      className="relative bg-cover bg-center bg-no-repeat"
-    >
+  return (
+    <div className="relative bg-cover bg-center bg-no-repeat">
       <div className="bgV">
         <video autoPlay muted loop className="w-full h-full object-cover">
-          <source src="https://fastcdn.hoyoverse.com/mi18n/bh3_global/m20230317hy14h0glc0/upload/b5bc75b1ce923c4ae5a093950d6bb216_3460498006874666439.mp4" type="video/mp4" />
+          <source
+            src="https://fastcdn.hoyoverse.com/mi18n/bh3_global/m20230317hy14h0glc0/upload/b5bc75b1ce923c4ae5a093950d6bb216_3460498006874666439.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <div className="absolute inset-0 bg-black/30">
@@ -26,7 +27,7 @@ const Contents = () => {
         </div>
       </div>
     </div>
-   )
-}
+  );
+};
 
-export default Contents
+export default Contents;

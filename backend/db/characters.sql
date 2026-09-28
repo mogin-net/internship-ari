@@ -37,7 +37,8 @@ values
 	('Fu Hua', null, 'February 9', 'China', 'Schicksal', 165, 53, 'Hua.jpg', 'Fu Hua is a survivor of the Previous Era and one of the legendary MANTIS warriors who fought against the Honkai to the very end. Immortal and battle-hardened, she now serves as the strict yet caring class monitor of St. Freya High.'),
 	('Elysia', null, 'November 11', 'Vladivostok 51', 'MOTH', 163, 54.8, 'Elysia.webp', 'Elysia was the second Flame-Chaser, and the very creator of the group. She was a member of the MOTHs and a very present figure in the Previous Era, helping humanity to fight Herrschers and the Honkai until the bitter end. In the Current Era, Elysia''s simulation is responsible for managing the Elysian Realm in the headquarters of World Serpent, guiding most of the successors sent by the organization in their quest to find the truth about the Previous Era.'),
 	('Seele', 'Vollerei', 'October 18', 'Estonia', 'Anti-Entropy', 149, 42, 'Seele.webp', 'Seele Vollerei is a timid orphan raised alongside Bronya Zaychik, who sacrificed herself in the X-10 Experiment to protect her friend, only to be trapped alone in the Sea of Quanta. Despite her fragile appearance, she carries a fierce resolve to protect those she loves, eventually growing into a mature, dependable Valkyrie whom even her closest friends look up to.'),
-	('Himeko', 'Murata', 'June 11', 'Far East', 'Schicksal', 167, 65, 'Himeko.webp', 'Himeko is the sharp-tongued yet warmhearted commander of the Valkyries at St. Freya High, guiding Kiana, Mei, and Bronya both in the classroom and on the battlefield. Despite her reckless, hard-drinking exterior, she carries a deep sense of duty and quietly worries over the fate of the students she''s come to love as family.');
+	('Himeko', 'Murata', 'June 11', 'Far East', 'Schicksal', 167, 65, 'Himeko.webp', 'Himeko is the sharp-tongued yet warmhearted commander of the Valkyries at St. Freya High, guiding Kiana, Mei, and Bronya both in the classroom and on the battlefield. Despite her reckless, hard-drinking exterior, she carries a deep sense of duty and quietly worries over the fate of the students she''s come to love as family.'),
+    ('Natasha', 'Cioara', 'June 19', 'Siberia', 'World Serpent' ,167, 55,'Natasha.jpeg', 'Raven (originally named Natasha Cioara) was born in Siberia. Following the Second Honkai War, in which she gained strong Honkai resistance, she was selected by the Gray Serpent and was forced to leave her brother behind. Natasha received training and became a mercenary subject to the World Serpent.');
 
 -- INSERT KE TABLE BATTLESUITS
 -- Kiana
@@ -220,7 +221,7 @@ VALUES
         3,
         'Silverwing: N-EX',
         'SilverwingIcon.webp',
-        '/assets/img/battlesuits/bronya/Silverwing.webp'
+        'Silverwing.webp'
     ),
     (
         3,

@@ -5,7 +5,7 @@ export const factionLogos = {
   Schicksal: "/assets/img/factions/SchicksalIcon.webp",
   MOTH: "/assets/img/factions/MOTHIcon.webp",
   "Anti-Entropy": "/assets/img/factions/AntiEntropy.webp",
-  "World Serpent": "/assets/img/factions/WorldSerpentIcon.png",
+  "World Serpent": "/assets/img/factions/WorldSerpentIcon.webp",
 };
 
 const CharacterFaction = ({
