@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import gsap from "gsap";
 
 import CharacterFaction from "./characterFaction";
@@ -13,11 +19,14 @@ const CharacterGallery = ({ characters = [] }) => {
   const [selectedFaction, setSelectedFaction] = useState("All");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [selectedBattlesuit, setSelectedBattlesuit] = useState(null);
+  const [carouselOffset, setCarouselOffset] = useState(0);
   const galleryRef = useRef(null);
   const detailRef = useRef(null);
   const factionRef = useRef(null);
   const battlesuitRef = useRef(null);
 
+  const carouselAnimatingRef = useRef(false);
+  const carouselDirectionRef = useRef(null);
   /*
    * =========================================================
    * CHARACTER NAME
@@ -27,7 +36,7 @@ const CharacterGallery = ({ characters = [] }) => {
   const getCharacterName = (character) => {
     if (!character) return "";
 
-    if (character.firstName === "Mei") {
+    if (character.firstName === "Mei" || character.firstName === "Himeko") {
       return `${character.lastName || ""} ${character.firstName}`.trim();
     }
 
@@ -66,13 +75,30 @@ const CharacterGallery = ({ characters = [] }) => {
 
   /*
    * =========================================================
+   * ROTATE CAROUSEL EFFECT
+   * =========================================================
+   */
+
+  const rotatedCharacters = useMemo(() => {
+    if (!filteredCharacters.length) return [];
+
+    const offset = carouselOffset % filteredCharacters.length;
+
+    return [
+      ...filteredCharacters.slice(offset),
+      ...filteredCharacters.slice(0, offset),
+    ];
+  }, [filteredCharacters, carouselOffset]);
+
+  /*
+   * =========================================================
    * CAROUSEL DATA
    * =========================================================
    */
 
   const carouselCharacters = useMemo(() => {
     if (!selectedCharacter) {
-      return filteredCharacters;
+      return rotatedCharacters;
     }
 
     const selectedIndex = filteredCharacters.findIndex(
@@ -93,7 +119,7 @@ const CharacterGallery = ({ characters = [] }) => {
       filteredCharacters[(selectedIndex + 1) % filteredCharacters.length];
 
     return [selected, next];
-  }, [filteredCharacters, selectedCharacter]);
+  }, [filteredCharacters, selectedCharacter, rotatedCharacters]);
 
   /*
    * =========================================================
@@ -204,6 +230,93 @@ const CharacterGallery = ({ characters = [] }) => {
 
     handleCharacterClick(filteredCharacters[previousIndex]);
   };
+
+  /*
+   * =========================================================
+   * CAROUSEL NAVIGATION - ALL CHARACTERS
+   * =========================================================
+   */
+
+  const nextCarousel = () => {
+    if (
+      !filteredCharacters.length ||
+      !galleryRef.current ||
+      carouselAnimatingRef.current
+    ) {
+      return;
+    }
+
+    carouselAnimatingRef.current = true;
+    carouselDirectionRef.current = "next";
+
+    gsap.to(galleryRef.current, {
+      x: -162,
+      duration: 0.45,
+      ease: "power3.inOut",
+
+      onComplete: () => {
+        setCarouselOffset(
+          (current) => (current + 1) % filteredCharacters.length,
+        );
+      },
+    });
+  };
+
+  const previousCarousel = () => {
+    if (
+      !filteredCharacters.length ||
+      !galleryRef.current ||
+      carouselAnimatingRef.current
+    ) {
+      return;
+    }
+
+    carouselAnimatingRef.current = true;
+    carouselDirectionRef.current = "previous";
+
+    const previousOffset =
+      (carouselOffset - 1 + filteredCharacters.length) %
+      filteredCharacters.length;
+
+    setCarouselOffset(previousOffset);
+  };
+
+  useLayoutEffect(() => {
+    if (
+      selectedCharacter ||
+      !galleryRef.current ||
+      !carouselDirectionRef.current
+    ) {
+      return;
+    }
+
+    const direction = carouselDirectionRef.current;
+
+    if (direction === "previous") {
+      gsap.set(galleryRef.current, {
+        x: -162,
+      });
+
+      gsap.to(galleryRef.current, {
+        x: 0,
+        duration: 0.45,
+        ease: "power3.out",
+        onComplete: () => {
+          carouselDirectionRef.current = null;
+          carouselAnimatingRef.current = false;
+        },
+      });
+    }
+
+    if (direction === "next") {
+      gsap.set(galleryRef.current, {
+        x: 0,
+      });
+
+      carouselDirectionRef.current = null;
+      carouselAnimatingRef.current = false;
+    }
+  }, [carouselOffset, selectedCharacter]);
 
   /*
    * =========================================================
@@ -373,10 +486,15 @@ const CharacterGallery = ({ characters = [] }) => {
           galleryRef={galleryRef}
         />
 
-        {selectedCharacter && (
+        {selectedCharacter ? (
           <CharacterNavigation
             onPrevious={previousCharacter}
             onNext={nextCharacter}
+          />
+        ) : (
+          <CharacterNavigation
+            onPrevious={previousCarousel}
+            onNext={nextCarousel}
           />
         )}
       </div>
