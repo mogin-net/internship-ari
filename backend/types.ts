@@ -58,3 +58,11 @@ export interface NewsBlock {
   content: string;
   sortOrder: number;
 }
+
+export type CharactersList = {
+  id: number;
+  firstName: string;
+  lastName: string | null;
+  faction: string;
+  image: string | null;
+};

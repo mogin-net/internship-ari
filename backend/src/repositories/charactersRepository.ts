@@ -1,4 +1,4 @@
-import type { Character } from "../../types.js";
+import type { Character, CharactersList } from "../../types.js";
 import { DatabaseError } from "../errors/appError.js";
 import { query } from "../util/pg.js";
 
@@ -51,43 +51,17 @@ export class CharactersRepository {
     }
   }
 
-  static async getAllCharacters(): Promise<Character[]> {
+  static async getAllCharacters(): Promise<CharactersList[]> {
     try {
-      const data = await query<Character>(
+      const data = await query<CharactersList>(
         `
       SELECT
         c.id,
         c.first_name AS "firstName",
         c.last_name AS "lastName",
-        c.birthday,
-        c.birthplace,
         c.fraction AS "faction",
-        c.height,
-        c.weight,
-        c.description,
-        c.image,
-
-        COALESCE(
-          json_agg(
-          json_build_object(
-            'id', b.id,
-            'characterId', b.character_id,
-            'name', b.name,
-            'icon', b.icon,
-            'image', b.image
-          )
-            ORDER BY b.id
-          ) FILTER (WHERE b.id IS NOT NULL),
-          '[]'
-        ) AS battlesuits
-
+        c.image
       FROM public.characters c
-
-      LEFT JOIN public.battlesuits b
-        ON b.character_id = c.id
-
-      GROUP BY c.id
-
       ORDER BY c.id ASC
       `,
       );

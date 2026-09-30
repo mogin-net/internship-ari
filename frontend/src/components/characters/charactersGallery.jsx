@@ -11,22 +11,28 @@ import CharacterFaction from "./characterFaction";
 import CharacterDetail from "./characterDetail";
 import CharacterCarousel from "./characterCarousel";
 import BattlesuitDisplay from "./battlesuitDisplay";
-import BattlesuitSelector from "./battlesuitSelector";
 import CharacterNavigation from "./characterNavigation";
 import FactionBadge from "./factionbadge";
 
-const CharacterGallery = ({ characters = [] }) => {
+const CharacterGallery = ({
+  characters = [],
+  selectedCharacter,
+  selectedBattlesuit,
+  onSelectCharacter,
+  onBack,
+  onBattlesuitChange,
+  detailRef,
+  battlesuitRef,
+}) => {
   const [selectedFaction, setSelectedFaction] = useState("All");
-  const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [selectedBattlesuit, setSelectedBattlesuit] = useState(null);
   const [carouselOffset, setCarouselOffset] = useState(0);
+
   const galleryRef = useRef(null);
-  const detailRef = useRef(null);
   const factionRef = useRef(null);
-  const battlesuitRef = useRef(null);
 
   const carouselAnimatingRef = useRef(false);
   const carouselDirectionRef = useRef(null);
+
   /*
    * =========================================================
    * CHARACTER NAME
@@ -128,16 +134,26 @@ const CharacterGallery = ({ characters = [] }) => {
    */
 
   const handleCharacterClick = (character) => {
-    setSelectedCharacter(character);
+    // Sekarang detail character diambil oleh Characters.jsx
+    onSelectCharacter(character);
 
-    setSelectedBattlesuit(character.battlesuits?.[0] || null);
-
+    // Tetap mempertahankan animasi gallery lama
     if (galleryRef.current) {
       gsap.to(galleryRef.current, {
         duration: 0.6,
         ease: "power3.out",
       });
     }
+  };
+
+  /*
+   * =========================================================
+   * DETAIL ANIMATION
+   * =========================================================
+   */
+
+  useEffect(() => {
+    if (!selectedCharacter) return;
 
     if (detailRef.current) {
       gsap.fromTo(
@@ -188,7 +204,7 @@ const CharacterGallery = ({ characters = [] }) => {
         },
       );
     }
-  };
+  }, [selectedCharacter, detailRef, battlesuitRef]);
 
   /*
    * =========================================================
@@ -301,6 +317,7 @@ const CharacterGallery = ({ characters = [] }) => {
         x: 0,
         duration: 0.45,
         ease: "power3.out",
+
         onComplete: () => {
           carouselDirectionRef.current = null;
           carouselAnimatingRef.current = false;
@@ -326,8 +343,9 @@ const CharacterGallery = ({ characters = [] }) => {
 
   const handleFactionChange = (faction) => {
     setSelectedFaction(faction);
-    setSelectedCharacter(null);
-    setSelectedBattlesuit(null);
+
+    // State character sekarang dimiliki Characters.jsx
+    onBack();
   };
 
   /*
@@ -337,7 +355,8 @@ const CharacterGallery = ({ characters = [] }) => {
    */
 
   const handleBattlesuitChange = (battlesuit) => {
-    setSelectedBattlesuit(battlesuit);
+    // State battlesuit sekarang dimiliki Characters.jsx
+    onBattlesuitChange(battlesuit);
 
     if (battlesuitRef.current) {
       gsap.fromTo(
@@ -383,7 +402,7 @@ const CharacterGallery = ({ characters = [] }) => {
         x: 0,
       });
     }
-  }, []);
+  }, [detailRef, battlesuitRef]);
 
   /*
    * =========================================================
@@ -395,12 +414,12 @@ const CharacterGallery = ({ characters = [] }) => {
     <section
       className="
         relative
-            min-h-[calc(100vh+5rem)]
+        min-h-[calc(100vh+5rem)]
         w-full
         overflow-x-hidden
         bg-[#101010]
         text-white
-    "
+      "
     >
       {/* BACKGROUND */}
 
@@ -440,10 +459,7 @@ const CharacterGallery = ({ characters = [] }) => {
           selectedBattlesuit={selectedBattlesuit}
           onBattlesuitChange={handleBattlesuitChange}
           detailRef={detailRef}
-          onBack={() => {
-            setSelectedCharacter(null);
-            setSelectedBattlesuit(null);
-          }}
+          onBack={onBack}
         />
       )}
 
