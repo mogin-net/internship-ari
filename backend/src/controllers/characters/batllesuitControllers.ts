@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import path from "node:path";
 
-import { BattlesuitsService } from "../services/battlesuitServices.js";
-import { NotFoundError } from "../errors/appError.js";
+import { BattlesuitsService } from "../../services/battlesuitServices.js";
+import { NotFoundError } from "../../errors/appError.js";
 
 const getCharacterFolder = (firstName: string) => {
   return firstName.trim().toLowerCase().replace(/\s+/g, "_");

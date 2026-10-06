@@ -135,7 +135,7 @@ const SidebarHm = () => {
                 <span
                   className={`text-[11px] uppercase tracking-[0.12em] transition-colors ${location.pathname === "/lore" ? "text-amber-500" : "text-white/50 group-hover:text-white"}`}
                 >
-                  Lore(Ongoing)
+                  Lore(Alpha)
                 </span>
               </a>
             </li>
@@ -155,25 +155,6 @@ const SidebarHm = () => {
                   className={`text-[11px] uppercase tracking-[0.12em] transition-colors ${location.pathname === "/contents" ? "text-amber-500" : "text-white/50 group-hover:text-white"}`}
                 >
                   Contents(Ongoing)
-                </span>
-              </a>
-            </li>
-
-            {/* Media */}
-            <li>
-              <a
-                href="/media"
-                className={`group flex items-center gap-3 rounded-md border px-3 py-3 transition-all ${location.pathname === "/media" ? "border-amber-500/20 bg-amber-500/5" : "border-transparent hover:border-white/10 hover:bg-white/5"}`}
-              >
-                <span
-                  className={`text-[9px] ${location.pathname === "/media" ? "text-amber-500/70" : "text-white/20 group-hover:text-amber-500/70"}`}
-                >
-                  06
-                </span>
-                <span
-                  className={`text-[11px] uppercase tracking-[0.12em] transition-colors ${location.pathname === "/media" ? "text-amber-500" : "text-white/50 group-hover:text-white"}`}
-                >
-                  Media(Ongoing)
                 </span>
               </a>
             </li>

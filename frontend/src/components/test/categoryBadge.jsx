@@ -1,7 +1,6 @@
-import React from 'react';
-import { factionLogos } from './characterFaction';
+import React from "react";
 
-const FactionBadge = ({ faction }) => {
+const CategoryBadge = ({ category }) => {
   return (
     <div
       className="
@@ -19,19 +18,6 @@ const FactionBadge = ({ faction }) => {
         text-center
       "
     >
-      <img
-        src={factionLogos[faction]}
-        alt={faction}
-        draggable="false"
-        className="
-          h-24
-          w-24
-          select-none
-          object-contain
-          opacity-70
-        "
-      />
-
       <p
         className="
           text-2xl
@@ -43,10 +29,10 @@ const FactionBadge = ({ faction }) => {
           text-white/60
         "
       >
-        {faction}
+        {category}
       </p>
     </div>
   );
 };
 
-export default FactionBadge;
+export default CategoryBadge;

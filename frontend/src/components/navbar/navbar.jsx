@@ -120,7 +120,7 @@ const Navbar = () => {
                   href="/lore"
                   className={`block px-2 py-2 text-[11px] uppercase tracking-[0.15em] rounded transition-colors md:p-0 ${location.pathname === "/lore" ? "text-amber-500" : "text-white/55 hover:text-amber-500"}`}
                 >
-                  Lore(Ongoing)
+                  Lore(Alpha)
                 </a>
               </li>
 

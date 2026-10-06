@@ -1,3 +1,5 @@
+import { string } from "yup";
+
 export type User = {
   id: number;
   firstName: string;
@@ -41,6 +43,29 @@ export interface Character {
   battlesuits: Battlesuit[];
 }
 
+export type CharactersList = {
+  id: number;
+  firstName: string;
+  lastName: string | null;
+  faction: string;
+  image: string | null;
+};
+
+export interface Lore {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+}
+
+export type LoreList = {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+};
+
 export interface News {
   id: number;
   title: string;
@@ -58,11 +83,3 @@ export interface NewsBlock {
   content: string;
   sortOrder: number;
 }
-
-export type CharactersList = {
-  id: number;
-  firstName: string;
-  lastName: string | null;
-  faction: string;
-  image: string | null;
-};

@@ -12,7 +12,7 @@ import CharacterDetail from "./characterDetail";
 import CharacterCarousel from "./characterCarousel";
 import BattlesuitDisplay from "./battlesuitDisplay";
 import CharacterNavigation from "./characterNavigation";
-import FactionBadge from "./factionbadge";
+import FactionBadge from "./factionBadge";
 
 const CharacterGallery = ({
   characters = [],

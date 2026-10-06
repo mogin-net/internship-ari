@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BattlesuitsController } from "../controllers/batllesuitControllers.js";
+import { BattlesuitsController } from "../controllers/characters/batllesuitControllers.js";
 
 const batllesuitRouter = Router();
 

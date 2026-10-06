@@ -1,8 +1,12 @@
 import type { Request, Response } from "express";
-import type { HttpResponse, Character, CharactersList } from "../../types.js";
-import { CharactersService } from "../services/charactersService.js";
+import type {
+  HttpResponse,
+  Character,
+  CharactersList,
+} from "../../../types.js";
+import { CharactersService } from "../../services/charactersService.js";
 import path from "node:path";
-import { NotFoundError } from "../errors/appError.js";
+import { NotFoundError } from "../../errors/appError.js";
 
 export class CharactersController {
   static async GET_IMAGE(req: Request<{ id: string }>, res: Response) {

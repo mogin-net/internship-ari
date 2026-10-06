@@ -9,6 +9,7 @@ import { authRouter } from "./src/routes/auth.js";
 import charactersRouter from "./src/routes/characters.js";
 import newsRouter from "./src/routes/news.js";
 import batllesuitRouter from "./src/routes/battlesuit.js";
+import loreRouter from "./src/routes/lore.js";
 import {
   errorHandler,
   notFoundHandler,
@@ -35,6 +36,7 @@ app.use("/auth", authRouter);
 app.use("/characters", charactersRouter);
 app.use("/news", newsRouter);
 app.use("/battlesuits", batllesuitRouter);
+app.use("/lore", loreRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
